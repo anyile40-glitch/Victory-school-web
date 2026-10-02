@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<h1 style="text-align:center";>VICTORY SCHOOL</h1>
+<marquee style="background-color: red;color: white;padding:15px";>ADMISSION NOW OPEN!!!</marquee>
+      <div>
+ <h2 style="text-align:center;color: darkgreen;">WELCOME TO VICTORY SCHOOL</h2>
+      </div>
+<div style="background:#f2f2f2; padding:20px; font-family: Arial;">
+  <div style="background:darkgreen; padding:20px; text-align:center; border-radius:12px 12px 0 0;">
+    <h1 style="color:white; margin:0;">VICTORY SCHOOL</h1>
+    <p style="color:white; margin:5px 0 0 0;">ADMISSION NOW OPEN!!!</p>
+  </div>
+
+  <div style="background:white; padding:30px; max-width:600px; margin:20px auto; border-radius:12px; box-shadow:0 4px 15px rgba(0,0,0,0.1);">
+    <h2 style="text-align:center; color:darkgreen;">CHILD REGISTRATION</h2>
+
+    <label>Child Name:</label><br>
+    <input id="childName" type="text" style="width:100%; padding:12px; margin:8px 0 20px 0; border-radius:6px; border:1px solid #ccc; box-sizing:border-box;"><br>
+
+    <label>Age:</label><br>
+    <input id="childAge" type="number" style="width:100%; padding:12px; margin:8px 0 20px 0; border-radius:6px; border:1px solid #ccc; box-sizing:border-box;"><br>
+
+    <label>Parent Name:</label><br>
+    <input id="parentName" type="text" style="width:100%; padding:12px; margin:8px 0 20px 0; border-radius:6px; border:1px solid #ccc; box-sizing:border-box;"><br>
+
+    <label>Class:</label><br>
+    <input id="childClass" type="text" style="width:100%; padding:12px; margin:8px 0 25px 0; border-radius:6px; border:1px solid #ccc; box-sizing:border-box;"><br>
+
+    <button onclick="sendToWhatsApp()" style="background:darkgreen; color:white; padding:15px; width:100%; border:none; border-radius:6px; font-weight:bold; font-size:16px; cursor:pointer;">
+      REGISTER & SEND
+    </button>
+  </div>
+</div>
+
+<script>
+function sendToWhatsApp() {
+  let name = document.getElementById('childName').value;
+  let age = document.getElementById('childAge').value;
+  let parent = document.getElementById('parentName').value;
+  let clas = document.getElementById('childClass').value;
+
+  if(name == "" || age == "" || parent == "" || clas == ""){
+    alert("Abeg fill all fields");
+    return;
+  }
+
+  // THIS NA THE MESSAGE WEY GO SHOW FOR PERSON DM
+  let text = `gud evening i would like to register in victory school%0A%0A*Child Name:* ${name}%0A*Age:* ${age}%0A*Parent Name:* ${parent}%0A*Class:* ${clas}`;
+
+  window.location.href = "https://wa.me/2348022661083?text=" + text;
+}
+</script>
